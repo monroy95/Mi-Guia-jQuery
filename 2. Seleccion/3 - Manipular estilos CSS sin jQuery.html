@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estilos</title>
+    <style>
+        .caja {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(14, 46, 105);
+            margin: 0 auto;
+            border: 1px solid rgb(29, 29, 46);
+            box-shadow: 1px 1px 12px black;
+        }
+
+        .transicion {
+            transition: all 1s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="caja"></div>
+    <script>
+        // Obtener los estilso de un elemento
+        var div = document.querySelector('div'),
+            estilos = window.getComputedStyle(div, null); // Obtiene los estilos computados
+
+        // imprimiendo los estilos computadso
+        console.log(estilos);
+        console.log(estilos.width);
+        console.log(estilos.height);
+        console.log(estilos.backgroundColor);
+        console.log(estilos['background-color']);
+
+        // Añadir una clase
+        div.classList.add('transicion');
+
+        // Modificar o añadir estilos
+        // div.style.backgroundColor = 'black';
+        div.style['border-radius'] = '20px';
+
+        // Cambiar varios estilos a la vez
+        div.style.cssText += 'width: 400px; height: 200px'
+    </script>
+</body>
+
+</html>

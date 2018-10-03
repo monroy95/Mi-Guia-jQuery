@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clases</title>
+    <style>
+        .rojo {
+            color: indianred;
+        }
+
+        .azul {
+            color: dodgerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hola Mundo</h1>
+    <button>OK</button>
+    <script>
+        var h1 = document.querySelector('h1'),
+            boton = document.querySelector('button');
+
+        // Agrega un listener al boton para el evento click
+        boton.addEventListener('click', () => {
+            if (!h1.classList.contains('rojo')) {
+                h1.classList.add('rojo');
+                h1.classList.remove('azul');
+            } else {
+                h1.classList.add('azul');
+                h1.classList.remove('rojo');
+            }
+        });
+
+        // Funcion para agrega o eliminar una clase
+        function toggleClass(elemento, clase) {
+            if (elemento.classList.contains(clase)) {
+                elemento.classList.remove(clase);
+            } else {
+                elemento.classList.add(clase);
+            }
+        }
+
+        // Agrega un listener al h1 al evento click
+        h1.addEventListener('click', function () {
+            toggleClass(this, 'rojo')
+        });
+    </script>
+</body>
+
+</html>
